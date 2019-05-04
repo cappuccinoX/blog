@@ -1,22 +1,38 @@
 import Vue from 'vue'
 import Router from 'vue-router'
 
-import App from './App'
 import Hello from './components/Hello'
+import Homepage from './components/homepage'
 
 Vue.config.debug = true
 Vue.use(Router)
 
-const router = new Router({
+// const router = new Router({
+//   routes: [
+//     { name: 'hello', path: '/hello', component: Hello }
+//   ]
+// })
+//
+// new Vue({
+//   el: '#app',
+//   router,
+//   render (createElement) {
+//     return createElement(App)
+//   }
+// })
+
+export default new Router({
   routes: [
-    { name: 'hello', path: '/hello', component: Hello }
+    {
+      path: '/hello',
+      name: 'hello',
+      component: Hello
+    },
+    {
+      path: '/homepage',
+      name: 'homepage',
+      component: Homepage
+    }
   ]
 })
 
-new Vue({
-  el: '#app',
-  router,
-  render (createElement) {
-    return createElement(App)
-  }
-})
